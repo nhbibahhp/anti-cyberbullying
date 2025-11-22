@@ -1,0 +1,344 @@
+/* Reset dasar */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #08af8e89 0%, #0679d1 100%);
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo img {
+  width: 75px;
+  height: auto;
+}
+
+/* Navigasi */
+.navlinks ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navlinks ul li a {
+  color: white;
+  font-weight: 600;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.navlinks ul li a:hover {
+  color: #764ba2;
+  background-color: white;
+}
+
+/* Header row */
+.header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.header-row-left {
+  flex: 1;
+}
+
+.animated-title {
+  color: #f00101;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.header-row-left p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Tambahkan jarak tombol "Pelajari Sekarang" */
+.header-row-left .report-button {
+  margin-top: 1.5rem;
+}
+
+.header-row-right img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Materi section */
+.materi {
+  background: #f0f1f5;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.materi-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.materi-container h1 {
+  font-size: 2.5rem;
+  color: #764ba2;
+  margin-bottom: 1rem;
+}
+
+.materi-content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .materi-content {
+    grid-template-columns: repeat(2, 1fr); /* 2 card per baris */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .materi-content {
+    grid-template-columns: 1fr; /* 1 card per baris */
+  }
+}
+
+.materi-card {
+  background: white;
+  border: 2px solid #764ba2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.materi-card:hover {
+  transform: translateY(-5px);
+  border-color: #f00101;
+  box-shadow: 0 8px 18px rgba(118,75,162,0.3);
+}
+
+.materi-detail {
+  display: none;
+  margin-top: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.materi-card.active .materi-detail {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.video-container {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.video-container iframe {
+  width: 560px; /* Lebar video */
+  height: 315px; /* Tinggi sesuai rasio 16:9 */
+  border: 0;
+}
+
+/* Tips & Konseling */
+.pelaporan-container p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.pelaporan-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pelaporan-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pelaporan-icon {
+  width: 80px; /* biar nggak terlalu gede */
+  height: auto;
+}
+
+.tips-list {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 800px;
+  margin: auto;   /* biar teks tetap di tengah tapi rapi */
+}
+
+.report-button {
+  background: #00aaff; /* biru cerah */
+  color: white;        /* teks putih */
+  font-weight: 700;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,170,255,0.5);
+  transition: all 0.4s ease;
+  display: inline-block;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  animation: pulsate 2.5s ease-in-out infinite;
+}
+
+.report-button:hover {
+  background: #0077cc; /* biru gelap */
+  box-shadow: 0 8px 25px rgba(0,119,204,0.7);
+  transform: translateY(-4px);
+}
+
+@keyframes pulsate {
+  0%,100% { box-shadow: 0 0 10px rgba(118,75,162,0.6);}
+  50% { box-shadow: 0 0 20px rgba(118,75,162,1);}
+}
+
+/* Tentang Kami */
+.tentang {
+  padding: 3rem 1.5rem;
+  background-color: #f5f7fa;
+}
+
+.tentang-flex {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  align-items: center;
+}
+
+.tentang-flex-left {
+  flex: 1.2;
+}
+
+.tentang-flex-left h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #764ba2;
+}
+
+.about-flex-right img {
+  max-width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(118,75,162,0.4);
+}
+
+/* Layout kiri-tengah-kanan */
+.tentang-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Logo kiri & kanan */
+.tentang-logo img {
+  width: 160px;       /* Samain ukuran logo */
+  height: 160px;
+  object-fit: contain;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(118,75,162,0.25);
+}
+
+/* Teks tengah */
+.tentang-text {
+  max-width: 500px;
+  text-align: justify;
+}
+
+.tentang-text h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tentang-flex {
+    flex-direction: column;
+  }
+
+  .tentang-logo img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(180deg, #222, #333);
+  color: #ddd;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 4px solid #764ba2;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .header-row { flex-direction: column; text-align: center; }
+  .tentang-flex { flex-direction: column; align-items: center; }
+  .header-row-left h1 { font-size: 2.2rem; }
+  .materi-content { grid-template-columns: 1fr; }
+}
